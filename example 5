@@ -1,3 +1,4 @@
+#!/usr/bin/env groovy
 // Some fast steps to inspect the build server. Create a pipeline script job and add this:
 
 node {
