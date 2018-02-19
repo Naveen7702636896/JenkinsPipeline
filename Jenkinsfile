@@ -1,1 +1,1 @@
-pipeline {}
+Some Jenkinsfile examples
