@@ -1,10 +1,3 @@
-// Jenkinsfile-When
-// ----------------------------------------------------------------------
-// This example shows a variety of ways to use 'when' for flow control
-// Note: This Jenkinsfile needs to be executed as part of a
-//       Multibranch Pipeline project to demonstrate the 'branch' 
-//       variable in the stage("BASIC WHEN - Branch") stage
-// ----------------------------------------------------------------------
 pipeline {
    agent any
     
@@ -15,12 +8,22 @@ pipeline {
    }
     
    stages {
+   
+      // skip a tage while creating the pipeline
+      stage("BASIC WHEN - Branch") {
+         when {
+            expression { false }  //skip this step
+         }
+         steps {
+            echo 'This step whil never be run'
+         }
+      }
       
       // Execute when branch = 'master'
       stage("BASIC WHEN - Branch") {
          when {
-		    branch 'master'
-		 }
+            branch 'master'
+	 }
          steps {
             echo 'BASIC WHEN - Master Branch!'
          }
