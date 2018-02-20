@@ -10,13 +10,13 @@ pipeline {
     
    stages {
    
-      // skip a tage while creating the pipeline
-      stage("BASIC WHEN - Branch") {
+      // skip a stage while creating the pipeline
+      stage("A stage to be skipped") {
          when {
-            expression { false }  //skip this step
+            expression { false }  //skip this stage
          }
          steps {
-            echo 'This step whil never be run'
+            echo 'This step will never be run'
          }
       }
       
